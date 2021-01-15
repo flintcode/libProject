@@ -8,3 +8,4 @@ Live Preview: https://flintcode.github.io/libProject/
 4. Utilizing line breaks and overflow-wrap properties to streamline for lengthy book titles
 5. Using Object constructors to create elements and their corresponding child nodes allowing accessible, clean, replicable functions and event listeners for every element.
 6. Using CSS RGBA property to create modal form with fade in effect
+7. Creating slide in animations on event trigger
