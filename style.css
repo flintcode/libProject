@@ -95,6 +95,15 @@ button {
     z-index:1;
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity:0.5;
+  }
+  100% {
+    opacity:0.5;
+  }
+}
+
 /* form */
 #openForm {
     width:50px;
@@ -140,12 +149,13 @@ label {
     left:88%;
     height:10%;
     width:10%;
-    font-size: 25px;
+    font-size: 45px;
     background-color: white;
     border:none;
     border-radius:5%;
     animation-name:slideRightToLeft;
     animation-duration: 1s;
+    overflow:hidden;
    
 }
 #addNew:hover{

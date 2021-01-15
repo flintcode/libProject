@@ -83,9 +83,8 @@ function Form () {
                     document.body.style.transition = "all 0.3s";  
                     document.body.style.background = "rgb(255, 160, 122,0.5)";
                     document.getElementById("header").style.background = "rgb(173, 216, 230,0.5)";
-                    document.getElementsByClassName("")
                     formContainer[i].style.display = "block";            
-                }     
+                }   
              })
          }       
     }
