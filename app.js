@@ -8,6 +8,7 @@ const formOpen = document.querySelector("#openForm");
 const bookDisplay = document.querySelector('#bookContainer');
 const addBook =  document.getElementsByClassName("addNew");
 const formContainer = document.getElementsByClassName("container");
+const bookCards = document.querySelectorAll(".bookCard");
 let myLibrary = []
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 localStorage.setItem('entries',JSON.stringify(myLibrary));
@@ -64,7 +65,11 @@ function Form () {
                 formContainer[i].style.display = "none";
                 document.body.style.opacity = "1";
                 document.getElementById('addNew').style.display = 'block';
+                document.getElementById('addNew').style.opacity = "1";
              }
+            for (i = 0; i < bookCards.length; i++) {
+                bookCards[i].classList.add = 'displayNone';
+            } 
             });
 
         const submitButton = document.createElement("BUTTON");
@@ -83,8 +88,10 @@ function Form () {
                     document.body.style.transition = "all 0.3s";  
                     document.body.style.background = "rgb(255, 160, 122,0.5)";
                     document.getElementById("header").style.background = "rgb(173, 216, 230,0.5)";
-                    formContainer[i].style.display = "block";            
+                    formContainer[i].style.display = "block";   
+                    button.style.opacity = '0.5';         
                 }   
+
              })
          }       
     }
@@ -100,6 +107,7 @@ function Book (Title,Author,Pages) {
         card.textContent += author + "\r\n" ;
         card.textContent += pages + " pages" + "\r\n";
         card.setAttribute('data-id',title);
+
         card.style.whiteSpace = "pre-line";
         document.body.appendChild(card);
         const readToggle = document.createElement('button')
@@ -121,8 +129,8 @@ function Book (Title,Author,Pages) {
                     readToggle.textContent ="Read"
                     readToggle.style.background = '#94F8F3';
                 }
-            })
-        
+            
+            }) 
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
         removeButton.classList.add('remove');
@@ -132,7 +140,11 @@ function Book (Title,Author,Pages) {
         })
         card.appendChild(removeButton)
     }
+  
 }
+
+
+
 
 // prototypes
 Book.prototype = Object.create(Form.prototype);
@@ -155,8 +167,9 @@ function addBookToLibrary (e) {
         formContainer[i].style.display = "none";
         document.body.style.background = "rgb(255, 160, 122)";
         document.getElementById("header").style.background = "rgb(173, 216, 230)"
-        document.getElementById('addNew').style.display = 'block';
+        document.getElementById('addNew').style.opacity = '1';
     }
+    
   }
 
 //  Replicating elements from local storage to front end
